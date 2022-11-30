@@ -1,1 +1,202 @@
-<h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        
+        nav {
+            width: 100%;
+            background-color: rgba(37, 28, 137, 1);
+            margin-bottom: 20px;
+            height: 8vh;
+            line-height: 8vh;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 250px;
+        }
+       
+        nav ul li {
+            display: flex;
+            margin: 0 20px;
+            font-size: 22px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+       
+        nav ul li a:hover {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .wrapper {
+            background: url('https://images.unsplash.com/photo-1607012604314-89e0ae069ce1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 80vw;
+            height: 80vh;
+            margin: auto;
+            border-radius: 15px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tittle__content {
+            width: 50%;
+            text-align: center;
+            margin-top: 320px;
+        }
+
+        .tittle__content h2 {
+            margin: 20px 0;
+            color: #fff;
+            font-size: 38px;
+        }
+       
+        .tittle__content p {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .form__content {
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 150px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 40px;
+            border-radius: 15px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form__content h2 {
+            text-align: center;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 10px;
+            margin: 15px 0;
+            outline: none;
+            border-radius: 10px;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            color: #666;
+        }
+
+        button:hover {
+            background-color: rgba(37, 28, 137, 1);
+            cursor: pointer;
+            color: #fff;
+        }
+
+        footer {
+            height: 8vh;
+            line-height: 8vh;
+            background-color: rgba(37, 28, 137, 1);
+            margin-top: 17px;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        @media only screen and (max-width: 600px) {
+        nav ul {
+            justify-content: center;
+            margin-right: 0px;
+        }
+        
+        nav ul li a {
+            font-size: 20px;
+        }
+
+        .wrapper {
+            width: 90vw;
+        }
+        
+        .tittle__content {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .tittle__content h2 {
+            margin: 15px 0;
+            font-size: 30px;
+        }
+        
+        .tittle__content p {
+            font-size: 18px;
+        }
+
+        .form__content {
+            width: 95%;
+            margin: 0 auto;
+            margin-top: 0;
+            padding: 25px;
+            height: 400px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+        }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <div class="tittle__content">
+            <h2>Welcome to IT-Solution</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit!</p>
+        </div>
+        <div class="form__content">
+            <form action="/register" method="POST">
+                <h2>Register</h2>
+                <input id="input__login" name="name" type="text" placeholder="Full name">
+                <input id="input__email" name="email" type="text" placeholder="E-mail address">
+                <input id="input__password" name="password" type="password" placeholder="Password">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        Dawid Femin Ⓒ 2022. All rights reserved.
+    </footer>
+</body>
+</html>
