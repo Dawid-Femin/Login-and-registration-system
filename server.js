@@ -1,12 +1,43 @@
+if(process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
+
 //Importing Libraies that I installed using npm
 const express = require("express");
 const app = express();
 const bcrypt = require("bcrypt"); //Importing bcrypt package
+const passport = require("passport");
+const initializePassport = require("./passport-config");
+const flash = require("express-flash");
+const session = require("express-session");
+
+initializePassport(passport, 
+    email => users.find(user => user.email === email),
+    id => users.find(user => user.id === id)
+    );
 
 const users = [];
 
 app.use(express.urlencoded({extended: false}));
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false, //We wont resave the session variable if nothing is changed
+    saveUninitialized: false
+}));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+}))
+
+
+//Configuring the register post functionality
 app.post("/register", async(req,res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);

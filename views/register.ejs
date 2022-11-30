@@ -188,6 +188,13 @@
         <div class="form__content">
             <form action="/register" method="POST">
                 <h2>Register</h2>
+
+                <% if(messages.error) { %>
+                    <div>
+                        <strong> <%= messages.error %></strong>
+                    </div>
+                <% } %>
+                
                 <input id="input__login" name="name" type="text" placeholder="Full name">
                 <input id="input__email" name="email" type="text" placeholder="E-mail address">
                 <input id="input__password" name="password" type="password" placeholder="Password">

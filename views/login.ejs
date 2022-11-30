@@ -173,6 +173,7 @@
             display: block;
             margin: 0 auto;
         }
+
 }
 
     </style>
@@ -192,8 +193,15 @@
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit!</p>
         </div>
         <div class="form__content">
-            <form action="">
+            <form action="/login" method="POST">
                 <h2>Login</h2>
+                
+                <% if(messages.error) { %>
+                    <div>
+                        <strong> <%= messages.error %></strong>
+                    </div>
+                <% } %>
+
                 <input name="email" id="input__login" type="text" placeholder="E-mail address">
                 <input name="password" id="input__password" type="text" placeholder="Password">
                 <button type="submit">Login</button>
