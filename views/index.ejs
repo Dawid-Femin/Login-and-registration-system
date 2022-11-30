@@ -12,82 +12,108 @@
             box-sizing: border-box;
             font-family: sans-serif;
         }
-
-        .wrapper {
-            height: 100vh;
-            width: 100vw;
-            background-color: #444;
-        }
-
-        h1 {
-            padding: 20px 0;
-        }
-
-        form {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            text-align: center;
-            padding:  50px 100px;
-            width: 600px;
-            border-radius: 15px;
-            box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-            background-color: rgba(255, 255, 255, 0.4);
-        }
-
-        form input {
-            text-align: center;
-            width: 300px;
-            padding: 15px 30px;
-            outline: none;
-            border-radius: 15px;
-            border: 1px solid rgb(226, 226, 226);
-            margin: 12px 0;
-        }
-
-        form label {
-            text-align: center;
-            padding: 15px 30px;
-        }
-
+        
         nav {
             width: 100%;
+            background-color: rgba(37, 28, 137, 1);
+            margin-bottom: 20px;
             height: 8vh;
-            background-color: rgba(255, 255, 255, 0.4);
-        }
-
-        ul {
-            display: flex;
-            justify-content: flex-end;
-            list-style: none;
-            margin-right: 250px;
-        }
-
-        li {
-            font-size: 18px;
-            padding: 0 30px;
             line-height: 8vh;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+       
+        nav ul li {
+            display: flex;
+            margin: 0 20px;
+            font-size: 22px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+       
+        nav ul li a:hover {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .wrapper {
+            background: url('https://images.unsplash.com/photo-1607012604314-89e0ae069ce1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 80vw;
+            height: 80vh;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        footer {
+            height: 8vh;
+            line-height: 8vh;
+            background-color: rgba(37, 28, 137, 1);
+            margin-top: 17px;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .tittle {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: #fff;
+            text-align: center;
+        }
+
+        button {
+            padding: 5px 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            color: rgba(37, 28, 137, 1);
+            border: 2px solid #fff;
+        }
+
+        button:hover {
+            background-color: #bbb;
+            border: 2px solid #bbb;
             cursor: pointer;
         }
 
-        li:hover {
-            color: #fff;
+        @media only screen and (max-width: 600px) {
+        .wrapper {
+            width: 90vw;
         }
+    }
 
     </style>
 </head>
 <body>
+    <nav>
+        <form action="/logout?_method=DELETE" method="POST" type="submit">
+            <button>Logout</button>
+        </form>
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+
     <div class="wrapper">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-            </ul>
-        </nav>
-        <h1>Home Page</h1>
+        <div class="tittle">
+            <h1>Hello</h1>
+            <p>Welcome to my NodeJs App</p>
+        </div>
     </div>
+    <footer>
+        Dawid Femin Ⓒ 2022. All rights reserved.
+    </footer>
 </body>
 </html>
